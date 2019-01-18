@@ -4,3 +4,7 @@
   - Posted bio to Piazza
   - Attended online session
   - Went through Github and Linux tutorials and videos
+## Week of 01/14
+  - Went through python sections and tutorials including docopts, matplotlib
+  - Experimented with REPL
+  - Installed PyCharm, CMD5, docopts, OpenCV
