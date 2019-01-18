@@ -1,4 +1,4 @@
-##CHMOD
+CHMOD
 ---
 The chmod command, first seen in AT&T Unix version 1, is a shortening of ‘change mode’ and changes the access permissions 
 for a given file system object(s). It uses the following syntax:
