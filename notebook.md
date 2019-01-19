@@ -8,3 +8,4 @@
   - Went through python sections and tutorials including docopts, matplotlib
   - Experimented with REPL
   - Installed PyCharm, CMD5, docopts, OpenCV
+  - Wrote and created a pull request for a section in the Linux chapter on the chmod command
