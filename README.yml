@@ -5,3 +5,8 @@ owner:
   hid: sp19-516-125
   community: e516
   semester: sp19
+section:
+  - title: chmod
+    keyword: chmod
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/linux/linux.md
+    github: https://github.com/cloudmesh-community/book/pull/283
