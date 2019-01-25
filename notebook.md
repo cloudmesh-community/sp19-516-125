@@ -10,6 +10,7 @@
   - Installed PyCharm, CMD5, docopts, OpenCV
   - Wrote and created a pull request for a section in the Linux chapter on the chmod command
 ## Week of 01/21
-  - Started working on Box chapter
+  - Started working on Box chapter, added About, Limitations, and API sections
+  - Added code for files, get, folders, searches, and exceptions on Box
   - Read NIST Big Data Reference Architecture and Cloud Architecture sections
  
