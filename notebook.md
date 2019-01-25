@@ -9,3 +9,7 @@
   - Experimented with REPL
   - Installed PyCharm, CMD5, docopts, OpenCV
   - Wrote and created a pull request for a section in the Linux chapter on the chmod command
+## Week of 01/21
+  - Started working on Box chapter
+  - Read NIST Big Data Reference Architecture and Cloud Architecture sections
+ 
