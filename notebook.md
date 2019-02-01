@@ -1,16 +1,25 @@
+## Week of 01/28
+  - Added examples and explanations for collaborations, groups, tasks in Box chapter
+  - Started work on Google IaaS section
+  - Read about REST, Virtualization, Qemu, AWS, Azure, and Openstack in the book
+  - Watched REST video
+  - Attended online session, talked about project
+## Week of 01/21
+  - Started working on Box chapter, added About, Limitations, and API sections
+  - Added code for files, get, folders, searches, and exceptions on Box
+  - Read NIST Big Data Reference Architecture and Cloud Architecture sections
+  - Attended online session
+## Week of 01/14
+  - Went through python sections and tutorials including docopts, matplotlib
+  - Experimented with REPL
+  - Installed PyCharm, CMD5, docopts, OpenCV
+  - Wrote and created a pull request for a section in the Linux chapter on the chmod command
 ## Week of 01/07
   - Installed Virtual Box, Vagrant, and installed Python on Ubuntu
   - Created and committed readme.yml and notebook.md
   - Posted bio to Piazza
   - Attended online session
   - Went through Github and Linux tutorials and videos
-## Week of 01/14
-  - Went through python sections and tutorials including docopts, matplotlib
-  - Experimented with REPL
-  - Installed PyCharm, CMD5, docopts, OpenCV
-  - Wrote and created a pull request for a section in the Linux chapter on the chmod command
-## Week of 01/21
-  - Started working on Box chapter, added About, Limitations, and API sections
-  - Added code for files, get, folders, searches, and exceptions on Box
-  - Read NIST Big Data Reference Architecture and Cloud Architecture sections
+
+
  
