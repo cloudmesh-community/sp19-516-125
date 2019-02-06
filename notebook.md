@@ -1,6 +1,7 @@
 ## Week of 02/04
   - Read OpenStack and LibCloud Sections
   - Downloaded REST example and working on debugging
+  - Finished Box chapter
 ## Week of 01/28
   - Added examples and explanations for collaborations, groups, tasks in Box chapter
   - Submitted Google Iaas section
