@@ -1,6 +1,9 @@
+## Week of 02/04
+  - Read OpenStack and LibCloud Sections
+  - Downloaded REST example and working on debugging
 ## Week of 01/28
   - Added examples and explanations for collaborations, groups, tasks in Box chapter
-  - Started work on Google IaaS section
+  - Submitted Google Iaas section
   - Read about REST, Virtualization, Qemu, AWS, Azure, and Openstack in the book
   - Watched REST video
   - Attended online session, talked about project
