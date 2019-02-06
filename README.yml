@@ -10,3 +10,8 @@ section:
     keyword: chmod
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/linux/linux.md
     github: https://github.com/cloudmesh-community/book/pull/283
+section:
+  - title: Google Iaas
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/iaas/gcloud/gcloud.md
+    github: https://github.com/cloudmesh-community/book/pull/330
+    issue: https://github.com/cloudmesh-community/book/issues/244
