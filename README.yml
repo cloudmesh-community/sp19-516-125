@@ -18,4 +18,5 @@ section:
  chapter:
   - title: Box
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/in/box.md
+    github: https://github.com/cloudmesh-community/book/pull/351
     issue: https://github.com/cloudmesh-community/book/issues/259
