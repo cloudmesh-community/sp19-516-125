@@ -15,3 +15,7 @@ section:
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/iaas/gcloud/gcloud.md
     github: https://github.com/cloudmesh-community/book/pull/330
     issue: https://github.com/cloudmesh-community/book/issues/244
+ chapter:
+  - title: Box
+    url: https://github.com/cloudmesh-community/book/blob/master/chapters/in/box.md
+    issue: https://github.com/cloudmesh-community/book/issues/259
