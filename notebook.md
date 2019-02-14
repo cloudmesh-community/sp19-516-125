@@ -2,6 +2,7 @@
   - Created AWS account
   - Tested and debugged starting and stopping AWS node via libcloud
   - Created and pushed folder for Box images
+  - Started working on CM Box commands
 ## Week of 02/04
   - Read OpenStack and LibCloud Sections
   - Downloaded REST example and working on debugging
