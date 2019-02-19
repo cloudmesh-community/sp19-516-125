@@ -1,3 +1,5 @@
+## Week of 02/18
+  - Watched Spark videos and read chapter
 ## Week of 02/11
   - Created AWS account
   - Tested and debugged starting and stopping AWS node via libcloud
