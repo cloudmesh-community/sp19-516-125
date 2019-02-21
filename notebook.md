@@ -1,6 +1,8 @@
 ## Week of 02/18
   - Watched Spark videos and read chapter
   - Read chapter 13
+  - Worked on Box commands
+  - Met with TA, got REST example working
 ## Week of 02/11
   - Created AWS account
   - Tested and debugged starting and stopping AWS node via libcloud
