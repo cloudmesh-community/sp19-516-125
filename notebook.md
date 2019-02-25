@@ -1,3 +1,6 @@
+## Week of 02/25
+  - Read MQTT chapter
+  - Fixed Box config command
 ## Week of 02/18
   - Watched Spark videos and read chapter
   - Read chapter 13
