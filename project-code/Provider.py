@@ -2,68 +2,99 @@ from boxsdk import JWTAuth
 from boxsdk import Client
 import os
 
+
 class Provider(object):
 
-    def __init__(self, config_path):
-        self._sdk = JWTAuth.from_settings_file(config_path)
-        self._client = Client(self._sdk)
-        print("init {name}".format(name=self.__class__.__name__))
+    def __init__(self, path):
+        '''self.config = Config()
+        clientID = self.config['clientID']
+        clientSecret = self.config['clientSecret']
+        publicKeyID = self.config['publicKeyID']
+        privateKey = self.config['privateKey']
+        passphrase = self.config['passphrase']
+        enterpriseID = self.config['enterpriseID']
+        config_dict = {'boxAppSettings' :
+                           {'clientID' : clientID, 'clientSecret' : clientSecret,
+                                'appAuth':
+                                            { 'publicKeyID': publicKeyID, 'privateKey': privateKey,
+                                              'passphrase': passphrase}
+                            },
+                        'enterpriseID' : enterpriseID
+                       }
+        self.sdk = JWTAuth.from_settings_dictionary(config_dict)'''
+        self.sdk = JWTAuth.from_settings_file(path)
+        self.client = Client(self.sdk)
 
-    def put(self, filename):
-        items = self._client.search().query(filename)
-        if len(items) > 0 & items[0].name == filename:
-            file_id = items[0].id
-            file = self._client.file(file_id).update_contents(filename)
-            print("updated ", filename)
+    def put(self, filename, folder):
+        folders = self.client.search().query(folder, type='folder')
+        if len(folders) > 0:
+            folder_id = folders[0].id
+            items = self.client.folder(folder_id).get_items()
+            if not any(item.name == filename for item in items):
+                file = self.client.folder(folder_id).upload_file(filename)
+            else:
+                file_ind = next((index for (index, item) in enumerate(items) if item.name == filename), None)
+                file_id = folders[file_ind].id
+                file = self.client.file(file_id).update_contents(filename)
+            return file.__dict__
         else:
-            file = self._client.folder('0').upload_file(filename)
-            print("put ", filename)
-        return file
+            print("Folder not found.")
 
-
-    def get(self, filename):
-        items = self._client.search().query(filename)
+    def get(self, filename, destination):
+        items = self.client.search().query(filename, type='file')
         if len(items) > 0 & items[0].name == filename:
             file_id = items[0].id
-            with open(filename, 'wb') as f:
-                self._client.file(file_id).download_to(f)
-        print("Downloaded ", filename)
+            file = self.client.file(file_id).get()
+            with open(destination+"/"+filename, 'wb') as f:
+                self.client.file(file_id).download_to(f)
+            return file.__dict__
+        else:
+            print("File not found.")
 
     def delete(self, filename):
-        items = self._client.search().query(filename)
+        items = self.client.search().query(filename, type='file')
         if len(items) > 0 & items[0].name == filename:
             file_id = items[0].id
-            self._client.file(file_id).delete()
-            print("Deleted ", filename)
+            self.client.file(file_id).delete()
         else:
-            print("No file found with name ", filename)
+            print("File not found.")
 
     def size(self, filename):
-        items = self._client.search().query(filename)
+        items = self.client.search().query(filename, type='file', fields=['size'])
         if len(items) > 0:
-            size = items[0].size
-            name = items[0].name
-            print(name, " is ", size, " bytes.")
+            return items[0].__dict__
         else:
             print("No file found with name ", filename)
 
     def info(self, filename):
-        items = self._client.search().query(filename)
+        items = self.client.search().query(filename, type='file')
         if len(items) > 0:
             file_id = items[0].id
-            file = self._client.file(file_id).get()
-            for key in file:
-                print(key, " : ", file[key])
+            file = self.client.file(file_id).get()
+            return file.__dict__
         else:
-            print("No file found with name ", filename)
-
-    def create(self, filename):
-
+            print("File not found.")
 
     def sync(self, source, dest):
         files = []
         for file in os.listdir(source):
-            self.put(self, file)
+            self.put(file)
             files.append(file)
+        return files
 
+    def search(self, filename):
+        items = self.client.search().query(filename, type='file')
+        files = []
+        for item in items:
+            files.append(item.__dict__)
+        return files
+
+    def folder(self, folder, parent):
+        folders = self.client.search.query(parent, type='folder')
+        if len(folders) > 0:
+            parent = folders[0].id
+            folder = self.client.folder(parent).create_subfolder(folder)
+            return folder.__dict__
+        else:
+            print("Parent not found.")
 
