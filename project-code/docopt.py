@@ -9,8 +9,8 @@
                 storage [--storage=SERVICE] info FILENAME
                 storage [--storage=SERVICE] create FILENAME
                 storage [--storage=SERVICE] sync SOURCEDIR DESTDIR
-                storage [--storage=SERVICE] search
-                storage [--storage=SERVICE] folder
+                storage [--storage=SERVICE] search FILENAME
+                storage [--storage=SERVICE] folder DESTDIR FOLDERNAME
 
 
           This command does some useful things.
@@ -19,6 +19,7 @@
               FILE      a file name
               DESTDIR   destination directory for uploads and downloads
               SOURCEDIR source directory for syncing directories
+              FOLDERNAME name of new folder
               
 
           Options:
