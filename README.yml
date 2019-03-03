@@ -19,3 +19,5 @@ section:
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/in/box.md
     github: https://github.com/cloudmesh-community/book/pull/351
     issue: https://github.com/cloudmesh-community/book/issues/259
+box command docopt specification:
+    url: https://github.com/cloudmesh-community/sp19-516-125/blob/master/project-code/docopt.py
