@@ -1,28 +1,15 @@
 from boxsdk import JWTAuth
 from boxsdk import Client
+from cloudmesh.management.configuration.config import Config
 import os
 
 
 class Provider(object):
 
-    def __init__(self, path):
-        '''self.config = Config()
-        clientID = self.config['clientID']
-        clientSecret = self.config['clientSecret']
-        publicKeyID = self.config['publicKeyID']
-        privateKey = self.config['privateKey']
-        passphrase = self.config['passphrase']
-        enterpriseID = self.config['enterpriseID']
-        config_dict = {'boxAppSettings' :
-                           {'clientID' : clientID, 'clientSecret' : clientSecret,
-                                'appAuth':
-                                            { 'publicKeyID': publicKeyID, 'privateKey': privateKey,
-                                              'passphrase': passphrase}
-                            },
-                        'enterpriseID' : enterpriseID
-                       }
-        self.sdk = JWTAuth.from_settings_dictionary(config_dict)'''
-        self.sdk = JWTAuth.from_settings_file(path)
+    def __init__(self):
+        self.config = Config()
+        credentials = self.config.credentials("storage", "box")
+        self.sdk = JWTAuth.from_settings_file(credentials['config_path'])
         self.client = Client(self.sdk)
 
     def put(self, filename, folder):
@@ -64,7 +51,7 @@ class Provider(object):
         if len(items) > 0:
             return items[0].__dict__
         else:
-            print("No file found with name ", filename)
+            print("File not found.")
 
     def info(self, filename):
         items = self.client.search().query(filename, type='file')
@@ -78,7 +65,7 @@ class Provider(object):
     def sync(self, source, dest):
         files = []
         for file in os.listdir(source):
-            self.put(file)
+            self.put(file, dest)
             files.append(file)
         return files
 
@@ -89,12 +76,12 @@ class Provider(object):
             files.append(item.__dict__)
         return files
 
-    def folder(self, folder, parent):
+    def add(self, folder, parent):
         folders = self.client.search.query(parent, type='folder')
         if len(folders) > 0:
             parent = folders[0].id
             folder = self.client.folder(parent).create_subfolder(folder)
             return folder.__dict__
         else:
-            print("Parent not found.")
+            print("Parent directory not found.")
 
