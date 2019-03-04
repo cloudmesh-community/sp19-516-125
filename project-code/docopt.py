@@ -10,8 +10,8 @@
                 storage [--storage=SERVICE] create FILENAME
                 storage [--storage=SERVICE] sync SOURCEDIR DESTDIR
                 storage [--storage=SERVICE] search FILENAME
-                storage [--storage=SERVICE] folder DESTDIR FOLDERNAME
-
+                storage [--storage=SERVICE] add FOLDERNAME DESTDIR
+                
 
           This command does some useful things.
 
