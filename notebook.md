@@ -1,5 +1,5 @@
 ## Week of 03/04
-  - Created Box test file
+  - Created Box test file and ran tests successfully
   - Created docopts specification
   - Reached out to Mallik to coordinate docopts for storage command
 ## Week of 02/25
