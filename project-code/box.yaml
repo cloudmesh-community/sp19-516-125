@@ -1,0 +1,110 @@
+“swagger: "2.0"
+info: 
+  version: "0.0.1"
+  title: "boxapi"
+  description: "Cloud file storage with Box."
+  termsOfService: "http://swagger.io/terms/"
+  contact: kelifine@iu.edu
+    name: "Box REST API"
+  license: 
+    name: "Apache"
+host: "localhost:8080"
+basePath: "/cloudmesh"
+schemes: 
+  - "http"
+consumes: 
+  - "application/json"
+produces: 
+  - "application/json"
+paths: 
+  /directory:
+    get:
+      tags:
+        - storage
+      operationId: cloudmesh.storage.listdir
+      description: "Returns list of folders in the currenty directory"
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "Directory information"
+          schema: 
+            type: array
+            $ref: "#/definitions/directory"
+    put:
+      tags:
+         - storage
+      operationId: cloudmesh.storage.createdir
+      description: "Creates a new directory"
+      parameters:
+        - name: foldername
+          in: path
+          required: true
+          description: The name of the new folder
+          type: String
+        - name: destdir
+          in: path
+          required: true
+          description: The name of the parent of the new folder
+          type: String
+      produces:
+        - "application/json"
+      responses:
+        "201":
+          description: "Created"
+        "400":
+          description: "Bad request"
+        "404":
+          description: "Not found"
+  /directory/{file}:
+    get:
+      tags:
+        - storage
+      operationId: cloudmesh.storage.get
+      description: "Downloads file to local disk"
+      parameters:
+        - name: filename
+          in: path
+          required: true
+          description: The name of the file to be downloaded
+          type: String
+        - name: destdir
+          in: path
+          required: true
+          description: The name of the directory to download to. 
+          type: String
+      produces:
+        - "application/json"
+      responses:
+        "302":
+          description: "Found"
+        "404":
+          description: "Not found"
+    put:
+     tags:
+        - storage
+     operationId: cloudmesh.storage.put
+     description: "Uploads file to destination directory"
+     parameters:
+      - name: filename
+         in: path
+         required: true
+         description: The path or name of file to be uploaded.
+         type: String
+       - name: destdir
+         in: path
+         required: true
+         description: The name of the folder the file is uploaded to. 
+         type: String
+     produces:
+       - "application/json"
+     responses:
+       "201":
+         description: "Created"
+       "404":
+         description: "Not found"
+definitions:
+  directory:
+    type: "object"
+    required: 
+      - "model”
