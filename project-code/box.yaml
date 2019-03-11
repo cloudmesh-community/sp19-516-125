@@ -22,7 +22,7 @@ paths:
       tags:
         - storage
       operationId: cloudmesh.storage.listdir
-      description: "Returns list of folders in the currenty directory"
+      description: "Returns list of contents in the currenty directory"
       produces: 
         - "application/json"
       responses: 
@@ -52,6 +52,9 @@ paths:
       responses:
         "201":
           description: "Created"
+          schema:
+            type: array
+            $ref: "#/definitions/directory"
         "400":
           description: "Bad request"
         "404":
@@ -78,6 +81,9 @@ paths:
       responses:
         "302":
           description: "Found"
+          schema:
+            type: array
+            $ref: "#/definitions/directory"
         "404":
           description: "Not found"
     put:
@@ -101,6 +107,9 @@ paths:
      responses:
        "201":
          description: "Created"
+         schema:
+            type: array
+            $ref: "#/definitions/directory"
        "404":
          description: "Not found"
 definitions:
