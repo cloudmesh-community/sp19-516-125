@@ -1,3 +1,7 @@
+## Week of 03/11
+  - Worked on Box commands
+  - Drafted OpenAPI specification
+  - Had a call with Mallik and Tarun re docopts
 ## Week of 03/04
   - Created Box test file and ran tests successfully
   - Created docopts specification
