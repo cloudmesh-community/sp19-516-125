@@ -1,4 +1,4 @@
-"""
+        """
         ::
 
           Usage:
@@ -8,30 +8,28 @@
                 storage [--storage=SERVICE] size FILENAME
                 storage [--storage=SERVICE] info FILENAME
                 storage [--storage=SERVICE] create FILENAME
-                storage [--storage=SERVICE] sync SOURCEDIR DESTDIR
                 storage [--storage=SERVICE] search FILENAME
-                storage [--storage=SERVICE] add FOLDERNAME DESTDIR
-                
+                storage [--storage=SERVICE] createdir DIRNAME DESTDIR
+                storage [--storage=SERVICE] listdir DIRNAME
+                storage [--storage=SERVICE] deletedir DIRNAME
 
-          This command does some useful things.
+
+          This command creates, deletes, and returns information on directories and files in cloud storage services.
 
           Arguments:
               FILE      a file name
               DESTDIR   destination directory for uploads and downloads
               SOURCEDIR source directory for syncing directories
-              FOLDERNAME name of new folder
-              
+              DIRNAME name of new folder
 
-          Options:
-              -f      specify the file
 
           Example:
             set storage=box
-            storage  put FILENAME
+            storage put FILENAME DESTDIR
 
             is the same as 
 
-            storage  --storage=box put FILENAME
+            storage  --storage=box put FILENAME DESTDIR
 
 
         """
