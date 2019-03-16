@@ -1,16 +1,14 @@
-        """
+"""
         ::
 
           Usage:
-                storage [--storage=SERVICE] put FILENAME DESTDIR
+                storage [--storage=SERVICE] put FILENAME SOURCEDIR [DESTDIR]
                 storage [--storage=SERVICE] get FILENAME DESTDIR
                 storage [--storage=SERVICE] delete FILENAME
-                storage [--storage=SERVICE] size FILENAME
                 storage [--storage=SERVICE] info FILENAME
-                storage [--storage=SERVICE] create FILENAME
                 storage [--storage=SERVICE] search FILENAME
-                storage [--storage=SERVICE] create dir DIRNAME DESTDIR
-                storage [--storage=SERVICE] list dir DIRNAME
+                storage [--storage=SERVICE] create dir DIRNAME [DESTDIR]
+                storage [--storage=SERVICE] list dir [DIRNAME]
                 storage [--storage=SERVICE] delete dir DIRNAME
 
 
@@ -25,11 +23,11 @@
 
           Example:
             set storage=box
-            storage put FILENAME DESTDIR
+            storage put FILENAME SOURCEDIR DESTDIR
 
             is the same as 
 
-            storage  --storage=box put FILENAME DESTDIR
+            storage  --storage=box put FILENAME SOURCEDIR DESTDIR
 
 
         """
