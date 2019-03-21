@@ -1,3 +1,7 @@
+## Week of 03/18
+  - Installed Mongo and got it working
+  - Went through mongo files and experimented with them to understand how they work
+  - Reworked some Box commands based on conversations with Mallik and Tarun
 ## Week of 03/11
   - Worked on Box commands
   - Drafted OpenAPI specification
