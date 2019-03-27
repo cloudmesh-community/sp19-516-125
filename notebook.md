@@ -1,6 +1,7 @@
-## Week f 3/25
+## Week of 3/25
   - Fixed image in Box chapter
   - Reworking Box commands based on new docopt specification
+  - Read Go chapter
 ## Week of 03/18
   - Installed Mongo and got it working
   - Went through mongo files and experimented with them to understand how they work
