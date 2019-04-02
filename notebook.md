@@ -1,3 +1,6 @@
+## Week of 4/01
+  - Reworking test for box
+  - Added documentation to box provider file
 ## Week of 3/25
   - Fixed image in Box chapter
   - Reworking Box commands based on new docopt specification
