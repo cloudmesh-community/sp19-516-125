@@ -20,4 +20,4 @@ section:
     github: https://github.com/cloudmesh-community/book/pull/351
     issue: https://github.com/cloudmesh-community/book/issues/259
 project:
-    url: https://github.com/kelifine/cm/tree/master/cloudmesh/storage
+    url: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py
