@@ -1,6 +1,11 @@
+## Week of 04/08
+  - Fixed storage bugs
+  - Uninstalled and reinstalled cms
+  - Working on getting new cms running
 ## Week of 4/01
   - Reworking test for box
   - Added documentation to box provider file
+  - Started workin on vdir
 ## Week of 3/25
   - Fixed image in Box chapter
   - Reworking Box commands based on new docopt specification
