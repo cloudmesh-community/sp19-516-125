@@ -2,6 +2,7 @@
   - Fixed storage bugs
   - Uninstalled and reinstalled cms
   - Working on getting new cms running
+  - Fixed box test file
 ## Week of 4/01
   - Reworking test for box
   - Added documentation to box provider file
