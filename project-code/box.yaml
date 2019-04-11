@@ -1,11 +1,11 @@
-“swagger: "2.0"
+swagger: "2.0"
 info: 
   version: "0.0.1"
-  title: "boxapi"
-  description: "Cloud file storage with Box."
+  title: "boxstorage"
+  description: "A service for box file storage using swagger-2.0 specification and codegen"
   termsOfService: "http://swagger.io/terms/"
-  contact: kelifine@iu.edu
-    name: "Box REST API"
+  contact: 
+    name: "Box file storage REST Service"
   license: 
     name: "Apache"
 host: "localhost:8080"
@@ -17,103 +17,195 @@ consumes:
 produces: 
   - "application/json"
 paths: 
-  /directory:
-    get:
+  /put:
+    post:
       tags:
-        - storage
-      operationId: cloudmesh.storage.listdir
-      description: "Returns list of contents in the currenty directory"
+        - BXS
+      operationId: boxstor_openapi.put
+      description: "Upload file to the specified directory"
+      parameters:
+        - in: body
+          name: params 
+          description: "Provide the directory name in body of the request"
+          schema: 
+            $ref: "#/definitions/PUT"
       produces: 
         - "application/json"
       responses: 
         "200":
-          description: "Directory information"
-          schema: 
-            type: array
-            $ref: "#/definitions/directory"
-    put:
-      tags:
-         - storage
-      operationId: cloudmesh.storage.createdir
-      description: "Creates a new directory"
-      parameters:
-        - name: foldername
-          in: path
-          required: true
-          description: The name of the new folder
-          type: String
-        - name: destdir
-          in: path
-          required: true
-          description: The name of the parent of the new folder
-          type: String
-      produces:
-        - "application/json"
-      responses:
-        "201":
-          description: "Created"
-          schema:
-            type: array
-            $ref: "#/definitions/directory"
-        "400":
-          description: "Bad request"
-        "404":
-          description: "Not found"
-  /directory/{file}:
+          description: "Upload file"
+  /get:
     get:
       tags:
-        - storage
-      operationId: cloudmesh.storage.get
-      description: "Downloads file to local disk"
+        - BXS
+      operationId: boxstor_openapi.get
+      description: "Download file from specified directory"
       parameters:
-        - name: filename
-          in: path
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
           required: true
-          description: The name of the file to be downloaded
-          type: String
-        - name: destdir
-          in: path
+        - in: query
+          name: source 
+          description: "Provide the source path in body of the request"
+          type: string
           required: true
-          description: The name of the directory to download to. 
-          type: String
-      produces:
+        - in: query
+          name: destination 
+          description: "Provide the destination path in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
         - "application/json"
-      responses:
-        "302":
-          description: "Found"
-          schema:
-            type: array
-            $ref: "#/definitions/directory"
-        "404":
-          description: "Not found"
-    put:
-     tags:
-        - storage
-     operationId: cloudmesh.storage.put
-     description: "Uploads file to destination directory"
-     parameters:
-      - name: filename
-         in: path
-         required: true
-         description: The path or name of file to be uploaded.
-         type: String
-       - name: destdir
-         in: path
-         required: true
-         description: The name of the folder the file is uploaded to. 
-         type: String
-     produces:
-       - "application/json"
-     responses:
-       "201":
-         description: "Created"
-         schema:
-            type: array
-            $ref: "#/definitions/directory"
-       "404":
-         description: "Not found"
+      responses: 
+        "200":
+          description: "get files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /list:
+    get:
+      tags:
+        - BXS
+      operationId: boxstor_openapi.list
+      description: "Returns list of files and folders in the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: directory 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "list files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /search:
+    get:
+      tags:
+        - BXS
+      operationId: boxstor_openapi.search
+      description: "Searches the files in the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: directory 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: filename 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "search files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /delete:
+    get:
+      tags:
+        - BXS
+      operationId: bxstor_openapi.delete
+      description: "Deletes the files in the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: source 
+          description: "Provide the source name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: recursive 
+          description: "Provide the recursive option in body of the request"
+          type: string
+          required: false
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "delete files"
+          schema: 
+            $ref: "#/definitions/LIST"
+  /create_dir:
+    get:
+      tags:
+        - BXS
+      operationId: azstor_openapi.create_dir
+      description: "creates the specified directory"
+      parameters:
+        - in: query
+          name: service 
+          description: "Provide the service name in body of the request"
+          type: string
+          required: true
+        - in: query
+          name: directory 
+          description: "Provide the directory name in body of the request"
+          type: string
+          required: true
+      produces: 
+        - "application/json"
+      responses: 
+        "200":
+          description: "create directory"
+          schema: 
+            $ref: "#/definitions/LIST"
+
 definitions:
-  directory:
+  PUT:
     type: "object"
     required: 
-      - "model”
+      - "service"
+      - "source"
+      - "destination"
+      - "recursive"
+    properties: 
+      service:
+        type: "string"
+      source:
+        type: "string"
+      destination:
+        type: "string"
+      recursive:
+        type: "string"
+  LIST:
+    type: "object"
+    required: 
+      - "d"
+    properties: 
+      d:
+        type: "string"
