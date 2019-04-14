@@ -1,8 +1,12 @@
+## Week of 04/15
+  - Working on vdir get and ls
 ## Week of 04/08
   - Fixed storage bugs
   - Uninstalled and reinstalled cms
   - Working on getting new cms running
   - Fixed box test file
+  - Added to storage readme
+  - Working on vdir add
 ## Week of 4/01
   - Reworking test for box
   - Added documentation to box provider file
