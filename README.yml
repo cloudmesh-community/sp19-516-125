@@ -14,11 +14,11 @@ section:
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/iaas/gcloud/gcloud.md
     github: https://github.com/cloudmesh-community/book/pull/330
     issue: https://github.com/cloudmesh-community/book/issues/244
- chapter:
+chapter:
   - title: Box
     url: https://github.com/cloudmesh-community/book/blob/master/chapters/in/box.md
     github: https://github.com/cloudmesh-community/book/pull/351
     issue: https://github.com/cloudmesh-community/book/issues/259
 project:
-  - title: TBD
-    url: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py
+  - title: Cloudmesh Box Provider
+    code: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py
