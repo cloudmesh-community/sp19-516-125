@@ -1,5 +1,8 @@
 ## Week of 04/15
   - Working on vdir get and ls
+  - Finished vdir command
+  - Created test for vdir command
+  - Added vdir to storage readme
 ## Week of 04/08
   - Fixed storage bugs
   - Uninstalled and reinstalled cms
