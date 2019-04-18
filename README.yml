@@ -23,9 +23,10 @@ project:
   - title: Cloudmesh Box Provider
     code: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/provider/box/Provider.py
     url: https://github.com/cloudmesh/cloudmesh-storage/blob/master/README.md
-    pytest: https://github.com/cloudmesh/cloudmesh-storage/blob/master/tests/test_box.py
+    pytest: 
+    - https://github.com/cloudmesh/cloudmesh-storage/blob/master/tests/test_box.py
   - title: Cloudmesh Virtual Directory
-    code: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/vdir/api/manager.py
-    code: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/vdir/command/vdir.py
+    code: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/vdir
     url: https://github.com/cloudmesh/cloudmesh-storage/blob/master/README.md
-    pytest: TBD
+    pytest: 
+    - TBD
