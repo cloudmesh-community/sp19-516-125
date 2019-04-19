@@ -29,4 +29,4 @@ project:
     code: https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/vdir
     url: https://github.com/cloudmesh/cloudmesh-storage/blob/master/README.md
     pytest: 
-    - TBD
+    - https://github.com/cloudmesh/cloudmesh-storage/blob/master/tests/test_vdir.py
