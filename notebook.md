@@ -1,5 +1,6 @@
 ## Week of 04/22
   - Implemented vdir openapi
+  - Wrote test for vdir openapi
 ## Week of 04/15
   - Working on vdir get and ls
   - Finished vdir command
